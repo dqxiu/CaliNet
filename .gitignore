@@ -155,4 +155,4 @@ train_calinet/dataset/trex
 qa_finetune/data_previous
 qa_finetune/sup_meta
 qa_finetune/old_version
-
+.DS_Store

@@ -8,7 +8,7 @@ This project hosts the code for implementing the following paper:
 > *arXiv preprint ([arXiv 1912.04488](https://arxiv.org/abs/2210.03329))*   
 
 
-![highlights](highlights.png)
+<p align="center"><img width="50%" src="highlights.png" /></p>
 
 ## Highlights
 - **Contrastive Knowledge Assessment:** We detect false knowledge in PLMs with a Contrastive Knowledge Assessing (CKA) method. The key motivation behind CKA is a plain argument that a PLM correctly learns a fact if and only if the model assigns the right fact higher scores than possible negative facts.
