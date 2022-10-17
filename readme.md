@@ -75,9 +75,10 @@ python dataset/pararel_code/preprocess_for_t5_2json.py
 python dataset/pararel_code/preprocess_for_t5_json2csv.py
 ```
 ### Train CaliNet
-**layers** refers to a set of layers to add CaliNet to.
-**dim** refers to the dimension of CaliNet.
-**fact_nums** refers to the num of facts to calibrate.
+* **layers** refers to a set of layers to add CaliNet to.
+* **dim** refers to the dimension of CaliNet.
+* **fact_nums** refers to the num of facts to calibrate.
+
 ```bash
 cd train_calinet
 bash bash/t5_train_kb_f.sh
