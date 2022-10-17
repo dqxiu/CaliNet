@@ -2,7 +2,7 @@ import argparse
 import json
 import os
 import sys
-
+import csv
 sys.path.append("../../..")
 import pickle
 import json
@@ -17,6 +17,7 @@ from transformers import AutoConfig, AutoTokenizer, T5Tokenizer
 from src.modeling_t5 import T5ForConditionalGeneration
 # from transformers import T5ForConditionalGeneration as T5ForConditionalGenerationOri
 from transformers.generation_utils import GenerationMixin
+
 # warnings.filterwarnings('ignore')
 
 
@@ -71,22 +72,22 @@ if __name__ == '__main__':
         # model.eval()
         device='cuda:0'
         model_config = AutoConfig.from_pretrained(
-            "/mnt/data2/dqx/finetune_knowledge/100_facts_1e-3_vanilla_ft_t5-large",
+            "${OUTPUT_PATH}/finetune_knowledge/100_facts_1e-3_vanilla_ft_t5-large",
             revision="main",
             use_auth_token=False
         )
         tokenizer = AutoTokenizer.from_pretrained(
-            "/mnt/data2/dqx/finetune_knowledge/100_facts_1e-3_vanilla_ft_t5-large",
+            "${OUTPUT_PATH}/finetune_knowledge/100_facts_1e-3_vanilla_ft_t5-large",
             use_fast=True,
             revision="main",
             use_auth_token=False,
         )
         model_config.ex_size = 256
         model_config.kb_layer = ""
-        model = T5ForConditionalGeneration.from_pretrained("/mnt/data2/dqx/finetune_knowledge/100_facts_1e-3_vanilla_ft_t5-large", config=model_config).to(device)
+        model = T5ForConditionalGeneration.from_pretrained("${OUTPUT_PATH}/finetune_knowledge/100_facts_1e-3_vanilla_ft_t5-large", config=model_config).to(device)
         model.eval()
         
-        path="/home/dqx/neural_kb/fact_checker/dataset/pararel/probing_data_100/"
+        path="${PROJECT_PATH}/train_calinet/dataset/pararel/probing_data_100/"
         with open(path+"assessing_prob100.json",'r') as load_f:
             load_dict = json.load(load_f)
 

@@ -105,8 +105,6 @@ def generate_data(num_relations, num_tuples,num_total_facts, relations_given, LA
             output_id+=1
             
             
-
-            
     return output_dict,output_path
             
 
@@ -116,11 +114,11 @@ def generate_data(num_relations, num_tuples,num_total_facts, relations_given, LA
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--num_relations', '-nr', type=int, default=46, help='number of relations')
-    parser.add_argument('--num_tuples', '-nt', type=int, default=1000, help='number of tuples')
-    parser.add_argument('--num_total_facts', '-nf', type=int, default=4600, help='number of tuples')
+    parser.add_argument('--num_tuples', '-nt', type=int, default=500, help='number of tuples')
+    parser.add_argument('--num_total_facts', '-nf', type=int, default=23000, help='number of tuples')
     parser.add_argument('--relations_given', '-r', type=str, default="P264", help='which relations')
     parser.add_argument('--LAMA_path', '-pair', type=str,
-                        default="/home/dqx/neural_kb/fact_checker/dataset/trex/cleaned_T_REx/", help='number of tuples')
+                        default="${PROJECT_PATH}/fact_checker/dataset/trex/cleaned_T_REx/", help='number of tuples')
 
     args = parser.parse_args()
 

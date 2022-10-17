@@ -1,12 +1,12 @@
 import json
 import csv
 
-with open("/home/dqx/neural_kb/fact_checker/dataset/pararel/probing_data_1000/t5_large_cp_score.json",'r') as load_f:
+with open("${PROJECT_PATH}/fact_checker/dataset/pararel/probing_data_1000/t5_large_cp_score.json",'r') as load_f:
     load_dict = json.load(load_f)
     data_list = load_dict["data"]
 relation_dict=dict()
 cnt=0
-with open('/home/dqx/neural_kb/fact_checker/dataset/pararel/probing_data_1000/t5_large_cp_score.csv','w')as f:
+with open('${PROJECT_PATH}/fact_checker/dataset/pararel/probing_data_1000/t5_large_cp_score.csv','w')as f:
     f_csv = csv.writer(f)
     f_csv.writerow(["id","relation","score","fact","answer"])
     for item in data_list:

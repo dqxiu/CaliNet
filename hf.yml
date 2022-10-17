@@ -141,4 +141,4 @@ dependencies:
     - wandb==0.12.15
     - xxhash==2.0.2
     - zipp==3.5.0
-prefix: /home/dqx/software/miniconda3/envs/hf
+
